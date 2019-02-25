@@ -7,58 +7,25 @@
   <title>WebFlix:Hub</title>
   <meta name="" content="">
   <meta name="" content="">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
   <script>
             new WOW().init();
             </script>
 
 
-  <link rel="stylesheet" href="/css/webflix.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+  <link rel="stylesheet" href="css/webflix.css">
+  <link rel="stylesheet" href="css/animate.css">
  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
   rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+   integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <style media="screen">
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  html, body {
-  width: 100%;
-height: 100%;
-
-
-}
-  #webflix {
-    font-weight: bold;
-    color: #ff8d3f;
-    padding: 3%;
-    padding-left: 4%;
-  }
-  .sign-in {
-    float: right;
-    margin-top: 3%;
-    margin-right: 7%;
-    border: 0 !important;
-    font-family: 'Lato', sans-serif;
-    font-size: 25px;
-    color: #353c3f;
-    font-weight: 500;
-    background-color: #ff8d3f;
-  }
-  .register {
-    background-color: #ff8d3f;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    font-size: 30px;
-    color: #353c3f;
-    border: 0 !important;
-  }
-  .page-content {
-    background-color: #353c3f;
-  }
   .splash-left {
     width: 100%;
     height: auto%;
@@ -91,50 +58,69 @@ height: 100%;
   height: 100%;
   z-index: -1;
   opacity: 0.1;
-}
-#splash-msg {
-  font-family: 'Lato', sans-serif;
-  color: #d5d6d2;
-  font-weight: 400;
-  font-size: 45px;
-  padding-top: 4em;
-}
-.bmlogo {
-  width: 17%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding-right: 2%;
-  padding-bottom: 2%;
-}
+
+  }
+
+  .sign-in {
+    float: right;
+    margin-top: 3%;
+    margin-right: 7%;
+    border: 0 !important;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    color: #353c3f;
+    font-weight: 500;
+    background-color: #ff8d3f;
+  }
+  .register {
+    background-color: #ff8d3f;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    color: #353c3f;
+    border: 0 !important;
+  }
+  .register:hover {
+    transition: 0.7s;
+  }
+  .sign-in:hover {
+    transition: 0.7s;
+  }
+
   </style>
 
 </head>
 
 <body>
-  <div class="container-fluid splash-left">
+  <?php include 'includes/login.php' ?>
+  <div class="container-fluid splash-left bounce">
     <div class="row">
-      <div class="col-md-6 bounceInUp">
+      <div class="col-md-6">
         <div class="">
-        <h1 class="" id="webflix">WEBFLIX</h1>
+        <h1 class="wow fadeIn" data-wow-duration="2s" data-wow-delay="3.2s" id="webflix">WEBFLIX</h1>
 
       </div>
     </div>
       <div class="col-md-6">
-        <a class="btn btn-primary sign-in" href="#">Sign In</a>
+        <a class="btn btn-primary sign-in wow fadeIn"
+        data-wow-duration="2s" data-wow-delay="3.2s" data-toggle="modal" data-target="#myModal">Sign In <i class="fas fa-sign-in-alt"></i></a>
       </div>
     </div>
     <div class="row">
       <div class="col-md-5 offset-md-2">
-        <h1 id="splash-msg">Access the web's finest collection <br/>of movie RSS feeds
-        , movie trailers <br/>and movie reviews. <br/>Immerse yourself.....</h1>
+        <h1 class="splash-msg wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s" style="padding-top: 4em;">Access the web's finest collection</h1>
+          <h1 class="splash-msg wow fadeIn" data-wow-duration="2s" data-wow-delay="1s">of movie RSS feeds, movie trailers</h1>
+          <h1 class="splash-msg wow fadeIn" data-wow-duration="2s" data-wow-delay="1.5s">and movie reviews.</h1>
+          <h1 class="splash-msg wow fadeIn" data-wow-duration="2s" data-wow-delay="2s">Immerse yourself.....</h1>
         <br/>
-        <button type="button" class="btn btn-primary btn-lg register">Register Now For Free! ></button>
+        <a href="register.php" type="button" class="btn btn-primary btn-lg register wow fadeIn"
+              data-wow-duration="2s" data-wow-delay="2.8s">
+          Register Now For Free &nbsp;<i class="fas fa-arrow-alt-circle-right"></i></a>
       </div>
 
 
     </div>
-  <img src="images/LogoNic.png" class="bmlogo" alt="">
+  <img src="images/LogoNic.png" class="bmlogo wow fadeIn" data-wow-duration="2s" data-wow-delay="3.5s" alt="">
   </div>
 
 

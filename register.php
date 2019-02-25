@@ -7,205 +7,132 @@
   <title>WebFlix:Hub</title>
   <meta name="" content="">
   <meta name="" content="">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
   <script>
             new WOW().init();
             </script>
 
 
-  <link rel="stylesheet" href="/css/webflix.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+  <link rel="stylesheet" href="css/webflix.css">
+  <link rel="stylesheet" href="css/animate.css">
  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
   rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+   integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <style media="screen">
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  html, body {
+<style media="screen">
+.splash-left2 {
   width: 100%;
-height: 100%;
-
+  height: auto%;
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
 
 }
-  #webflix {
-    font-weight: bold;
-    color: #ff8d3f;
-    padding: 3%;
-    padding-left: 4%;
-  }
-  #webflixreg {
-    font-weight: bold;
-    color: #ff8d3f;
-    margin-top: 20%;
-
-  }
-  .sign-in {
-    float: right;
-    margin-top: 3%;
-    margin-right: 7%;
-    border: 0 !important;
-    font-family: 'Lato', sans-serif;
-    font-size: 25px;
-    color: #353c3f;
-    font-weight: 500;
-    background-color: #ff8d3f;
-  }
-  .register {
-    background-color: #ff8d3f;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    color: #353c3f;
-    border: 0 !important;
-  }
-  .cancel {
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    border: 0 !important;
-  }
-  .page-content {
-    background-color: #353c3f;
-  }
-  .splash-left {
-    width: 100%;
-    height: auto%;
-    min-width: 100%;
-    min-height: 100%;
-    position: relative;
-
-  }
-  .splash-left::before {
-    background-color: #353c3f ;
-    background-size: cover;
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-  }
-  .splash-left::after {
-    background-image: url('images/Happy-Gilmore.jpg');
-   background-size: cover;
+.splash-left2::before {
+  background-color: #353c3f ;
+  background-size: cover;
   content: "";
   display: block;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
-  opacity: 0.1;
+  z-index: -2;
 }
-#splash-msg {
+.splash-left2::after {
+  background-image: url('images/Happy-Gilmore.jpg');
+ background-size: cover;
+content: "";
+display: block;
+position: absolute;
+top: 0px;
+left: 0px;
+width: 100%;
+height: 100%;
+z-index: -1;
+opacity: 0.1;
+}
+.sign-in {
+  float: right;
+  margin-top: 3%;
+  margin-right: 7%;
+  border: 0 !important;
   font-family: 'Lato', sans-serif;
-  color: #d5d6d2;
-  font-weight: 400;
-  font-size: 45px;
-  padding-top: 4em;
+  font-size: 25px;
+  color: #353c3f;
+  font-weight: 500;
+  background-color: #ff8d3f;
 }
-.bmlogo {
-  width: 17%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding-right: 2%;
-  padding-bottom: 2%;
+.register {
+  background-color: #ff8d3f;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  color: #353c3f;
+  border: 0 !important;
 }
-input[type=text], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
- background-color: white !important;
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-
+.register:hover {
+  transition: 0.7s;
 }
-input[type=password], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-background-color: white !important;
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-
-}
-
-/* Style the submit button with a specific background color etc */
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-input {
-  color: white;
-}
-label {
-  color: white;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-form {
-  padding-top: 5%;
-  opacity: 0.6;
-  background-color: #353c3f;
-  padding: 3%;
-
-}
-h3 {
-  background-color: #353c3f;
-  opacity: 0.7;
-  padding: 2%;
-}
-  </style>
+</style>
 
 </head>
 
 <body>
-  <div class="container-fluid splash-left">
-    <div class="row">
+  <div class="container-fluid splash-left2">
+    <div class="row" >
       <div class="col-md-6 bounceInUp">
         <div class="">
-        <h1 class="" id="webflix">WEBFLIX</h1>
+        <h1 class="wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s" id="webflix">WEBFLIX</h1>
 
       </div>
     </div>
       <div class="col-md-6">
-        <a class="btn btn-primary sign-in" href="#">Sign In</a>
+        <a class="btn btn-primary sign-in wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s" href="#" >Sign In <i class="fas fa-sign-in-alt"></i></a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-3 offset-md-4 text-center">
-        <h3 class="" id="webflixreg">REGISTER</h3>
-        <form action="action_page.php">
+    <div class="row" style="margin-top: 8em;">
+      <div class="col-md-4 offset-md-1">
+        <h1 class="splash-msg wow fadeIn" data-wow-duration="2s" data-wow-delay="1.2s">First let's create your account</h1>
+      </div>
+      <div class="col-md-3 text-center">
+
+        <form action="welcome.php">
 
 
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <input class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2s" type="text" id="fname" name="firstname" placeholder="Your first name..">
+        <input class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.2s" type="text" id="fname" name="firstname" placeholder="Your last name..">
+          <input class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.4s" type="text" id="fname" name="firstname" placeholder="Your user name..">
 
 
-      <input type="password" id="lname" name="lastname" placeholder="Your last name..">
 
 
-
-      <input class="btn btn-primary btn register" type="button" value="Submit">
-      <input class="btn btn-danger btn cancel" type="button" value="Cancel">
+      <select class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.6s" name="genres" style="margin-bottom: 15px;">
+        <option>Choose your Favourite Genre</option>
+         <option value="volvo">Horror</option>
+         <option value="saab">Stoner Comedies</option>
+         <option value="fiat">Rom Coms</option>
+         <option value="audi">Comedy</option>
+         <option value="audi">Holland</option>
+      </select>
+      <select class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.8s" name="countries" style="margin-bottom: 15px;">
+        <option>Choose your Country</option>
+         <option value="uk">United Kindgdom</option>
+         <option value="usa">United States</option>
+         <option value="ire">Republic of Ireland</option>
+         <option value="swe">Sweden</option>
+         <option value="nl">Holland</option>
+      </select>
+      <input class="wow fadeIn" data-wow-duration="2s" data-wow-delay="3s" type="password" id="lname" name="lastname" placeholder="Create a strong password..">
+      <input class="btn btn-primary btn register wow fadeIn" data-wow-duration="2s" data-wow-delay="3.2s" type="button" value="Submit">
+      <input class="btn btn-danger btn cancel wow fadeIn" data-wow-duration="2s" data-wow-delay="3.4s" type="button" value="Cancel">
 
     </form>
 
@@ -213,7 +140,7 @@ h3 {
 
 
     </div>
-  <img src="images/LogoNic.png" class="bmlogo" alt="">
+  <img src="images/LogoNic.png" class="bmlogo wow fadeIn" data-wow-duration="2" data-wow-delay="0.3s" alt="">
   </div>
 
 
