@@ -37,6 +37,12 @@ height: 100%;
     padding: 3%;
     padding-left: 4%;
   }
+  #webflixreg {
+    font-weight: bold;
+    color: #ff8d3f;
+    margin-top: 20%;
+
+  }
   .sign-in {
     float: right;
     margin-top: 3%;
@@ -52,8 +58,14 @@ height: 100%;
     background-color: #ff8d3f;
     font-family: 'Lato', sans-serif;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 20px;
     color: #353c3f;
+    border: 0 !important;
+  }
+  .cancel {
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
     border: 0 !important;
   }
   .page-content {
@@ -80,7 +92,7 @@ height: 100%;
     z-index: -2;
   }
   .splash-left::after {
-    background-image: url('images/spider-man-2.jpg');
+    background-image: url('images/Happy-Gilmore.jpg');
    background-size: cover;
   content: "";
   display: block;
@@ -107,6 +119,61 @@ height: 100%;
   padding-right: 2%;
   padding-bottom: 2%;
 }
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+ background-color: white !important;
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+
+}
+input[type=password], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+background-color: white !important;
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input {
+  color: white;
+}
+label {
+  color: white;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+form {
+  padding-top: 5%;
+  opacity: 0.6;
+  background-color: #353c3f;
+  padding: 3%;
+
+}
+h3 {
+  background-color: #353c3f;
+  opacity: 0.7;
+  padding: 2%;
+}
   </style>
 
 </head>
@@ -125,11 +192,23 @@ height: 100%;
       </div>
     </div>
     <div class="row">
-      <div class="col-md-5 offset-md-2">
-        <h1 id="splash-msg">Access the web's finest collection <br/>of movie RSS feeds
-        , movie trailers <br/>and movie reviews. <br/>Immerse yourself.....</h1>
-        <br/>
-        <button type="button" class="btn btn-primary btn-lg register">Register Now For Free! ></button>
+      <div class="col-md-3 offset-md-4 text-center">
+        <h3 class="" id="webflixreg">REGISTER</h3>
+        <form action="action_page.php">
+
+
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+
+      <input type="password" id="lname" name="lastname" placeholder="Your last name..">
+
+
+
+      <input class="btn btn-primary btn register" type="button" value="Submit">
+      <input class="btn btn-danger btn cancel" type="button" value="Cancel">
+
+    </form>
+
       </div>
 
 
