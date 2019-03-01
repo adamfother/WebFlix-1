@@ -14,6 +14,10 @@ height: 100%;
   color: #ff8d3f;
   padding: 3%;
   padding-left: 4%;
+
+}
+.webflixdiv {
+  opacity: 0.7;
 }
 .sign-in {
   float: right;
@@ -138,7 +142,7 @@ input[type=submit]:hover {
 form {
   padding-top: 5%;
   opacity: 0.6;
-  
+
   padding: 3%;
 
 }
@@ -146,4 +150,17 @@ h3 {
   background-color: #353c3f;
   opacity: 0.7;
   padding: 2%;
+}
+li {
+  display: inline-block;
+}
+.webflixNav {
+  float: right;
+  padding: 2%;
+  font-size: 30px;
+  opacity: 0.6;
+
+}
+.nav-item, .nav-link {
+  color: #ff8d3f;
 }
