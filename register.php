@@ -25,63 +25,6 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<style media="screen">
-.splash-left2 {
-  width: 100%;
-  height: auto%;
-  min-width: 100%;
-  min-height: 100%;
-  position: relative;
-
-}
-.splash-left2::before {
-  background-color: #353c3f ;
-  background-size: cover;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-}
-.splash-left2::after {
-  background-image: url('images/Happy-Gilmore.jpg');
- background-size: cover;
-content: "";
-display: block;
-position: absolute;
-top: 0px;
-left: 0px;
-width: 100%;
-height: 100%;
-z-index: -1;
-opacity: 0.1;
-}
-.sign-in {
-  float: right;
-  margin-top: 3%;
-  margin-right: 7%;
-  border: 0 !important;
-  font-family: 'Lato', sans-serif;
-  font-size: 25px;
-  color: #353c3f;
-  font-weight: 500;
-  background-color: #ff8d3f;
-}
-.register {
-  background-color: #ff8d3f;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  font-size: 25px;
-  color: #353c3f;
-  border: 0 !important;
-}
-.register:hover {
-  transition: 0.7s;
-}
-</style>
 
 </head>
 
@@ -120,7 +63,7 @@ opacity: 0.1;
          <option value="saab">Stoner Comedies</option>
          <option value="fiat">Rom Coms</option>
          <option value="audi">Comedy</option>
-         <option value="audi">Holland</option>
+         <option value="audi"></option>
       </select>
       <select class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.8s" name="countries" style="margin-bottom: 15px;">
         <option>Choose your Country</option>

@@ -11,10 +11,12 @@ height: 100%;
 }
 #webflix {
   font-weight: bold;
-  color: #ff8d3f;
+  color: blue;
+  background-color: ;
+  font-family: 'Black Ops One', cursive;
   padding: 1%;
   padding-left: 4%;
-  width: 30%;
+  width: 100%;
 
 }
 .webflixdiv {
@@ -122,7 +124,7 @@ opacity: 0.1;
 
 }
 .splash-left3::before {
-  background-color: #353c3f ;
+  background-color: black;
   background-size: cover;
   content: "";
   display: block;
@@ -134,7 +136,7 @@ opacity: 0.1;
   z-index: -2;
 }
 .splash-left3::after {
-  background-image: url('../images/Happy-Gilmore.jpg');
+  background-image: url('../images/justice-league.jpg');
  background-size: cover;
 content: "";
 display: block;
@@ -157,7 +159,7 @@ opacity: 0.1;
 
   }
   #splash-left4::before {
-    background-color: #353c3f ;
+    background-color: black ;
     background-size: cover;
     content: "";
     display: block;
@@ -170,7 +172,7 @@ opacity: 0.1;
   }
   #splash-left4::after {
     
-    background-image: url('../images/The-Jungle-Book.jpg');
+    background-image: url('../images/batman.jpg');
    background-size: cover;
   content: "";
   display: block;
@@ -193,7 +195,7 @@ opacity: 0.1;
 
   }
   .splash-left5::before {
-    background-color: #353c3f ;
+    background-color: black ;
     background-size: cover;
     content: "";
     display: block;
@@ -205,7 +207,7 @@ opacity: 0.1;
     z-index: -2;
   }
   .splash-left5::after {
-    background-image: url('../images/The-Jungle-Book.jpg');
+    background-image: url('../images/dc.jpg');
    background-size: cover;
   content: "";
   display: block;
@@ -266,7 +268,6 @@ font-size: 45px;
   right: 0;
   padding-right: 2%;
   padding-bottom: 2%;
-  opacity: 0.5;
 }
 #webflixreg {
   font-weight: bold;
@@ -336,15 +337,16 @@ li {
   float: right;
   padding: 2%;
   font-size: 30px;
-  opacity: 0.6;
+  opacity: 1;
+  width: 50%;
 
 }
 .nav-item, .nav-link {
-  color: #ff8d3f;
+  color: blue;
 }
 #sign-in {
     float: right;
-    margin-top: 2%;
+    margin-top: 3%;
     margin-right: 7%;
     border: 0 !important;
     font-family: 'Lato', sans-serif;
@@ -387,6 +389,6 @@ li {
   .page-content {
     background-color: #353c3f;
   }
-    #star {
-display: none;
+  #star {
+font-size: 30px;
   }
