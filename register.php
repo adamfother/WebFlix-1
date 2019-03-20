@@ -1,95 +1,132 @@
 <!doctype html>
+<?php 
 
-<html lang="en">
+include('inc/dbconnect.inc.php');
+include('inc/form_handlers/register_handler.php');
+include('inc/form_handlers/login_handler.php');
+
+
+
+?>
+<html>
 <head>
-  <meta charset="utf-8">
-
-  <title>WebFlix:Hub</title>
-  <meta name="" content="">
-  <meta name="" content="">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
-  <script>
-            new WOW().init();
-            </script>
-
-
-  <link rel="stylesheet" href="css/webflix.css">
-  <link rel="stylesheet" href="css/animate.css">
- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-   integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Welcome to WebFlix</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/register.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="assets/js/register.js"></script>
 
 </head>
 
 <body>
-  <div class="container-fluid splash-left2">
-    <div class="row" >
-      <div class="col-md-6 bounceInUp">
-        <div class="">
-        <h1 class="wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s" id="webflix">WEBFLIX</h1>
 
-      </div>
-    </div>
-      <div class="col-md-6">
-        <a class="btn btn-primary sign-in wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s" href="#" >Sign In <i class="fas fa-sign-in-alt"></i></a>
-      </div>
-    </div>
-    <div class="row" style="margin-top: 8em;">
-      <div class="col-md-4 offset-md-1">
-        <h1 class="splash-msg wow fadeIn" data-wow-duration="2s" data-wow-delay="1.2s">First let's create your account</h1>
-      </div>
-      <div class="col-md-3 text-center">
+	<?php 
+	if(isset($_POST['register_button'])) {
+		echo '
+		<script>
+			$(document).ready(function() {
+				$("#first").hide();
+				$("#second").show();
+			});
+		
+		</script>
+		';
+	}
+	
+	
+	?>
 
-        <form action="welcome.php">
-
-
-      <input class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2s" type="text" id="fname" name="firstname" placeholder="Your first name..">
-        <input class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.2s" type="text" id="fname" name="firstname" placeholder="Your last name..">
-          <input class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.4s" type="text" id="fname" name="firstname" placeholder="Your user name..">
-
-
-
-
-      <select class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.6s" name="genres" style="margin-bottom: 15px;">
-        <option>Choose your Favourite Genre</option>
-         <option value="volvo">Horror</option>
-         <option value="saab">Stoner Comedies</option>
-         <option value="fiat">Rom Coms</option>
-         <option value="audi">Comedy</option>
-         <option value="audi"></option>
-      </select>
-      <select class="wow fadeIn" data-wow-duration="2s" data-wow-delay="2.8s" name="countries" style="margin-bottom: 15px;">
-        <option>Choose your Country</option>
-         <option value="uk">United Kindgdom</option>
-         <option value="usa">United States</option>
-         <option value="ire">Republic of Ireland</option>
-         <option value="swe">Sweden</option>
-         <option value="nl">Holland</option>
-      </select>
-      <input class="wow fadeIn" data-wow-duration="2s" data-wow-delay="3s" type="password" id="lname" name="lastname" placeholder="Create a strong password..">
-      <input class="btn btn-primary btn register wow fadeIn" data-wow-duration="2s" data-wow-delay="3.2s" type="button" value="Submit">
-      <input class="btn btn-danger btn cancel wow fadeIn" data-wow-duration="2s" data-wow-delay="3.4s" type="button" value="Cancel">
-
-    </form>
-
-      </div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 form-div">
+				<div class="col-md-2"><img src="assets/images/yujin-logo.png" class="img-responsive reg-logo" width="869" height="263" alt=""/>
+				</div>
+				<div class="col-md-4 col-md-offset-2 yujin-header">
+					<h1 class="reg-header">Welcome to Webflix</h1>
+					<h3 class="reg-header">Login or sign up below</h3>
+				</div>
+				<div class="col-md-4 col-md-offset-4 login-box">
+					<div id="first">
+						<form action="register.php" method="POST">
+							<input type="email" name="log_email" placeholder="Email address" value="<?php 
+							if(isset($_SESSION['reg_email'])) {
+								echo $_SESSION['reg_email'];
+							}																														
+						?>" required>
+							<br>
+							<input type="password" name="log_password" placeholder="Password">
+							<br>
+							<?php if(in_array("Email or password is incorrect<br>", $error_array)) echo "Email or password is incorrect<br>"; ?>
+							<input class="reg-btn btn-primary" type="submit" name="login_button" value="Login">
+							<br>
+							<a href="#" id="signup" class="signup">Need an account? Register here</a>
+						</form>
+					</div>
 
 
-    </div>
-  <img src="images/LogoNic.png" class="bmlogo wow fadeIn" data-wow-duration="2" data-wow-delay="0.3s" alt="">
-  </div>
+					<!--register form-->
+					<div id="second">
+						<form action="register.php" method="POST">
+							<input type="text" name="reg_fname" placeholder="First Name" value="<?php 
+							if(isset($_SESSION['reg_fname'])) {
+								echo $_SESSION['reg_fname'];
+							}																														
+						?>" required>
+							<br>
+							<?php if(in_array("Your first name must be between 2 and 25 characters<br>", $error_array)) echo "Your first name must be between 2 and 25 characters<br>"; ?>
+							<input type="text" name="reg_lname" placeholder="Last Name" value="<?php 
+							if(isset($_SESSION['reg_lname'])) {
+								echo $_SESSION['reg_lname'];
+							}																															
+						?>" required>
+							<br>
+							<?php if(in_array("Your last name must be between 2 and 25 characters<br>", $error_array)) echo "Your last name must be between 2 and 25 characters<br>"; ?>
+							<input type="email" name="reg_email" placeholder="Email" value="<?php 
+							if(isset($_SESSION['reg_email'])) {
+								echo $_SESSION['reg_email'];
+							}
+
+						?>" required>
+							<br>
+							<input type="email" name="reg_email2" placeholder="Confirm Email" value="<?php 
+							if(isset($_SESSION['reg_email2'])) {
+								echo $_SESSION['reg_email2'];
+							}																															
+						?>" required>
+							<br>
+							<?php if(in_array("Email already in use<br>", $error_array)) echo "Email already in use<br>"; 
+						else if(in_array("Invalid format<br>", $error_array)) echo "Invalid format<br>"; 
+						else if(in_array("Emails do not match<br>", $error_array)) echo "Emails do not match<br>"; ?>
 
 
+							<input type="password" name="reg_password" placeholder="Password" required>
+							<br>
+							<input type="password" name="reg_password2" placeholder="Confirm Password" required>
+							<br>
+							<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Your passwords do not match<br>"; 
+						else if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "Your password can only contain english characters or numbers<br>"; 
+						else if(in_array("Your password must be between 5 and 30 characters<br>", $error_array)) echo "Your password must be between 5 and 30 characters<br>"; ?>
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
+							<label><input class="confirm" type="checkbox" name="confirm-check" label="I agree to the terms and conditions" required>&nbsp;I agree to the <a target="_blank" href="terms.php">terms and conditions</a></label>
+							<br/>
+
+							<input class="btn-primary" type="submit" name="register_button" value="register">
+
+							<?php if(in_array("<span style='color: aqua;'>You are now registered. Please login!</span><br>", $error_array)) echo "<span style='color: aqua;'>You are now registered. Please login!</span><br>"; ?>
+							<a href="#" id="signin" class="signin">Already have an account? Login here</a>
+
+						</form>
+					</div>
+
+				</div>
+				<!--<div style="margin-top:35%; color:#fff" class="col-md-4 col-md-offset-4"><p>Copyright Yujin network 2018</p></div>-->
+				<div class="space-div"></div>
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
