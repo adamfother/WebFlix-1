@@ -20,3 +20,5 @@ Hompage checks is user is logged in, if user not logged in redirects to the logi
 User name is created by concatinating first and last names ie my username would be adam_fotheringham
 
 username is then added to URL to create profile URL eg webflix.afotheringham.co.uk/adam_fotheringham
+
+Bugs - none known
