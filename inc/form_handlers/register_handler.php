@@ -110,7 +110,7 @@ if(isset($_POST['register_button'])){
 		else if($rand == 2)
 			$profile_pic = "assets/images/profile_pics/defaults/default-profile-picture.jpg";
 		
-		$query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic')");
+		$query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$em', '$password', '$date', '$profile_pic','','','')");
 		
 		array_push($error_array, "<span style='color: aqua;'>You are now registered. Please login!</span><br>");
 		
